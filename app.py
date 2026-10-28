@@ -26,7 +26,14 @@ if archivo is not None:
     if archivo.name.endswith(".csv"):
         df = pd.read_csv(archivo)
     elif archivo.name.endswith(".arff"):
-        datos, metadata = arff.loadarff(archivo)
+        import io
+        # Leer el archivo cargado y convertirlo a texto
+        contenido = archivo.getvalue().decode("utf-8-sig")
+        # Crear un archivo de texto en memoria
+        archivo_texto = io.StringIO(contenido)
+        # Leer el archivo ARFF
+        datos, metadata = arff.loadarff(archivo_texto)
+        # Convertir a DataFrame
         df = pd.DataFrame(datos)
     else:
         df = pd.read_excel(archivo)
