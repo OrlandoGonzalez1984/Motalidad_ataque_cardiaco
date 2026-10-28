@@ -55,7 +55,7 @@ if archivo is not None:
 
     st.subheader("Descriptivo Diabetes")
 
-    fig1, ax1 = plt.subplots(figsize=(8, 5))
+    fig1, ax1 = plt.subplots(figsize=(5, 4))
 
     df["Diabetes"].value_counts().plot(kind="bar",ax=ax1)
 
@@ -75,7 +75,7 @@ if archivo is not None:
 
     st.subheader("Descriptivo Sexo")
 
-    fig2, ax2 = plt.subplots(figsize=(8, 5))
+    fig2, ax2 = plt.subplots(figsize=(5, 4))
 
     df["Sexo"].value_counts().plot(kind="barh",ax=ax2)
 
