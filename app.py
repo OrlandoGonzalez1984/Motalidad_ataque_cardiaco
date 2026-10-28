@@ -26,7 +26,7 @@ if archivo is not None:
     if archivo.name.endswith(".csv"):
         df = pd.read_csv(archivo)
     elif archivo.name.endswith(".arff"):
-        datos, metadata = arff.loadarff(archivo)
+        datos, metadata = arff.loadarff("mortalidad_ataques_cardiacos (limpio).arff")
         df = pd.DataFrame(datos)
     else:
         df = pd.read_excel(archivo)
