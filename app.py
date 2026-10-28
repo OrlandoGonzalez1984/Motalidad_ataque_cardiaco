@@ -77,7 +77,7 @@ if archivo is not None:
 
     fig2, ax2 = plt.subplots(figsize=(8, 5))
 
-    df["Sexo"].value_counts().plot(kind="bar",ax=ax2)
+    df["Sexo"].value_counts().plot(kind="barh",ax=ax2)
 
     ax2.set_title("Distribución por Sexo")
     ax2.set_xlabel("Sexo")
